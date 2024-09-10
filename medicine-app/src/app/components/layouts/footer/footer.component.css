@@ -1,0 +1,13 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center !important;
+    color: #ffffff !important;
+    background-color: #8E24AA !important
+}
+
+.footer-cls{
+  margin-top: 5px !important;
+}

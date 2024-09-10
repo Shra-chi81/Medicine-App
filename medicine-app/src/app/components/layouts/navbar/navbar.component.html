@@ -1,0 +1,15 @@
+<div class="navbar">
+    <mat-toolbar color="nav-bar">
+        <mat-toolbar-row>
+            <span>My Medicine App</span>
+            <span class="spacer"></span>
+            <nav>
+                <a mat-button routerLink="/dashboard">Dashboard</a>
+                <a  mat-button  routerLink="/patient"> Patient
+                  </a>
+                <a mat-button (click)="logout()">Logout</a>
+
+            </nav>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>

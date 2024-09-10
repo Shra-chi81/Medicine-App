@@ -1,0 +1,31 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <!-- Mobile Number Field -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="mobile" placeholder="Enter Mobile Number" />
+          <mat-error *ngIf="loginForm.get('mobile')?.invalid && loginForm.get('mobile')?.touched">
+            Please enter a valid mobile number.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Password Field -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" placeholder="Enter Password" type="password" />
+          <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Login Button -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

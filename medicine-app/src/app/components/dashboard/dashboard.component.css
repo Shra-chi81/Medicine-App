@@ -1,0 +1,19 @@
+
+.main-container {
+    height: calc(100vh - 128px);
+    display: flex;
+  }
+  
+  .mat-sidenav {
+    width: 200px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  
+  .mat-sidenav {
+    color: #ffffff !important;
+    background-color: #BA68C8 !important;
+  }

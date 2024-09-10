@@ -1,0 +1,35 @@
+<div class="checkout-container">
+  <h2>Checkout</h2>
+  <form (ngSubmit)="placeOrder()">
+    <div *ngIf="medicines.length === 0">
+      <p>Loading medicine details...</p>
+    </div>
+    <div *ngIf="medicines.length > 0">
+      <div *ngFor="let medicine of medicines">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ medicine.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Price: {{ medicine.price | currency }}</p>
+            <p>Description: {{ medicine.description }}</p>
+            <mat-form-field>
+              <input
+                matInput
+                type="number"
+                [(ngModel)]="medicine.quantity"
+                [name]="'quantity-' + medicine.id"
+                min="1"
+                placeholder="Quantity"
+                
+              />
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Place Order</button>
+    <button mat-raised-button color="secondary" (click)="goBack()">Back</button>
+  </form>
+</div>

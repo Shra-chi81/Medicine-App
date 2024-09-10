@@ -1,0 +1,11 @@
+nav .mat-button {
+    color: #ffffff !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar-row {
+    color: #ffffff !important;
+}

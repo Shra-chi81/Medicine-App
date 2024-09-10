@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.spacer {
+    flex: 1 1 auto;
+  }
+
+  body {
+    display: block;
+    margin: 0 !important;
+}
+.ml-2{
+  margin-left: 3px;
+}
+
+.mat-toolbar{
+  background-color: #8E24AA !important
+ }
+
+ .mat-nav-list .mat-list-item .mat-list-item-content {
+  color: #ffffff !important;
+ }

@@ -1,0 +1,92 @@
+<div class="add-patient-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add Patient</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="form-scrollable">
+        <form [formGroup]="addPatientForm" (ngSubmit)="onSubmit()" class="add-patient-form">
+
+          <!-- Row 1: First Name & Last Name -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>First Name</mat-label>
+              <input matInput formControlName="first_name" placeholder="Enter First Name" />
+              <mat-error *ngIf="addPatientForm.get('first_name')?.invalid && addPatientForm.get('first_name')?.touched">
+                First name is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="last_name" placeholder="Enter Last Name" />
+            </mat-form-field>
+          </div>
+
+          <!-- Row 2: Mobile Number & Date of Birth -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>Mobile Number</mat-label>
+              <input matInput formControlName="mobile" placeholder="Enter Mobile Number" />
+              <mat-error *ngIf="addPatientForm.get('mobile')?.invalid && addPatientForm.get('mobile')?.touched">
+                Please enter a valid mobile number.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput formControlName="dob" placeholder="Enter Date of Birth" type="date" />
+              <mat-error *ngIf="addPatientForm.get('dob')?.invalid && addPatientForm.get('dob')?.touched">
+                Please enter a valid date of birth.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Row 3: Gender & Blood Group -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+              </mat-select>
+              <mat-error *ngIf="addPatientForm.get('gender')?.invalid && addPatientForm.get('gender')?.touched">
+                Gender is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>Blood Group</mat-label>
+              <input matInput formControlName="blood_group" placeholder="Enter Blood Group" />
+            </mat-form-field>
+          </div>
+
+          <!-- Row 4: API Key & Zip Code -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>API Key</mat-label>
+              <input matInput formControlName="apikey" placeholder="Enter API Key" />
+              <mat-error *ngIf="addPatientForm.get('apikey')?.invalid && addPatientForm.get('apikey')?.touched">
+                API Key is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="half-width">
+              <mat-label>Zip Code</mat-label>
+              <input matInput formControlName="zipcode" placeholder="Enter Zip Code" type="number" />
+              <mat-error *ngIf="addPatientForm.get('zipcode')?.invalid && addPatientForm.get('zipcode')?.touched">
+                Please enter a valid zip code.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Submit Button -->
+           <div class="submit-btn">
+            <button mat-raised-button color="primary" type="submit" [disabled]="addPatientForm.invalid">Add Patient</button>
+           </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
